@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./Header";
+import Calculator from "./Calculator";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <h1>Hello, React with TypeScript!</h1>
+      <h1>Simple Calculator</h1>
+      <Calculator />
     </div>
   );
 }
