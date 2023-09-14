@@ -28,6 +28,11 @@ const Calculator: React.FC = () => {
         <button onClick={clearExpression} className="clear">
           AC
         </button>
+        <button onClick={() => handleButtonClick("+/-")}>+/-</button>
+        <button onClick={() => handleButtonClick("%")}>%</button>
+        <button onClick={() => handleButtonClick("÷")} className="operator">
+          ÷
+        </button>
         <button onClick={() => handleButtonClick("7")}>7</button>
         <button onClick={() => handleButtonClick("8")}>8</button>
         <button onClick={() => handleButtonClick("9")}>9</button>
@@ -50,9 +55,6 @@ const Calculator: React.FC = () => {
         <button onClick={() => handleButtonClick(".")}>.</button>
         <button onClick={calculateResult} className="operator">
           =
-        </button>
-        <button onClick={() => handleButtonClick("÷")} className="operator">
-          ÷
         </button>
       </div>
     </div>
