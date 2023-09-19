@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import math from "mathjs";
 
 const Calculator: React.FC = () => {
   const [expression, setExpression] = useState<string>("");
@@ -13,7 +14,7 @@ const Calculator: React.FC = () => {
 
   const calculateResult = () => {
     try {
-      const result = Function('"use strict"; return (' + expression + ")")();
+      const result = math.evaluate(expression);
       setExpression(result.toString());
     } catch (error) {
       setExpression("Error");
