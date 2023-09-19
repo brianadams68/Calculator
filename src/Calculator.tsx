@@ -13,7 +13,8 @@ const Calculator: React.FC = () => {
 
   const calculateResult = () => {
     try {
-      setExpression(eval(expression));
+      const result = Function('"use strict"; return (' + expression + ")")();
+      setExpression(result.toString());
     } catch (error) {
       setExpression("Error");
     }
