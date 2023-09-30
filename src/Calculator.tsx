@@ -5,8 +5,15 @@ const Calculator: React.FC = () => {
   const [expression, setExpression] = useState<string>("");
 
   const handleButtonClick = (value: string) => {
-    setExpression((prevExpression) => prevExpression + value);
+    if (value === "+/-") {
+      setExpression((prevExpression) =>
+        prevExpression.startsWith("-") ? prevExpression.slice(1) : "-" + prevExpression
+      );
+    } else {
+      setExpression((prevExpression) => prevExpression + value);
+    }
   };
+  
 
   const clearExpression = () => {
     setExpression("");
@@ -32,7 +39,7 @@ const Calculator: React.FC = () => {
         </button>
         <button onClick={() => handleButtonClick("+/-")}>+/-</button>
         <button onClick={() => handleButtonClick("%")}>%</button>
-        <button onClick={() => handleButtonClick("÷")} className="operator">
+        <button onClick={() => handleButtonClick("/")} className="operator">
           ÷
         </button>
         <button onClick={() => handleButtonClick("7")}>7</button>
